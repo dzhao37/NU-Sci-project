@@ -1,0 +1,22 @@
+{
+  "name": "nu-sci-project",
+  "version": "1.0.0",
+  "description": "Starter Project for NU Sci",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/dzhao37/NU-Sci-project.git)"
+  },
+  "author": "Me",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "nodemon": "^3.0.1"
+  }
+}
