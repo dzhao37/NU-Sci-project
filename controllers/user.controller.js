@@ -1,24 +1,10 @@
 import User from "../models/user.js";
-import Connection from "../db/connection.js"
+// import Connection from "../db/connection.js"
+import UserAccessor from "../db_accessor/user.accessor.js";
 
 export default class UserController {
     static async getAllUsers(req, res) {
-        ///////////////////////////////////////////////
-        /*          Connect to the database          */
-        ///////////////////////////////////////////////
-        
-        await Connection.open("users");
-        const users = [];
-        try {
-            for await (const doc of User.find()) {
-                users.push(doc);
-            } 
-        } catch (e) {
-            throw e;
-        }
-
-        console.log(req);
-
+        const users = await UserAccessor.getAllUsers();
         res.json(users);
     }
 }
