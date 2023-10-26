@@ -10,10 +10,10 @@ const UserSchema = new Schema({
     followers: [{type: String}],
     following: [{type: String}]
 }, {
-    collection: 'users'
+    collection: 'NetworkBuilder'
 });
 
-const db = mongoose.connection.useDb("users");
-const User = db.model("User", UserSchema);
+const db = mongoose.connection.useDb("NUSciWebTeam");
+const User = db.model("NUSciWebTeam", UserSchema);
 
 export default User;
