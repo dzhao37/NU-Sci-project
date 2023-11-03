@@ -10,7 +10,7 @@ export default class UserController {
     
 
     static getLoginPage(req, res) {
-        res.render("login_page");
+        res.render("login_page", { error: req.cookies.error });
     }
 
     static getSignUpPage(req, res) {
@@ -24,7 +24,8 @@ export default class UserController {
             await UserAccessor.createUser(req.body);
             res.redirect("/login-page");
         } catch (e) {
-            res.redirect("/");
+            res.error = 999;
+            next();
         }
     }
 }
