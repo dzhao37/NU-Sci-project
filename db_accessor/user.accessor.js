@@ -2,6 +2,16 @@ import Connection from "../db/connection.js";
 import User from "../models/user.js";
 
 export default class UserAccessor {
+    static async getUser(username) {
+        try {
+            await Connection.open("users");
+            const user = await User.findOne({ username: username });
+            return user;
+        } catch (e) {
+            throw e;
+        }
+    }
+
     static async getAllUsers() {
         try {
             await Connection.open("NUSciWebTeam");
